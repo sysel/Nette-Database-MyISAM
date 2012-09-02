@@ -210,7 +210,7 @@ class MySqlMyIsamDriver extends Nette\Object implements Nette\Database\ISuppleme
 						. 'AND ( '
 							. '( '
 								. 'C.COLUMN_COMMENT REGEXP \'@refs [a-zA-Z_]+\\.[a-zA-Z_]+\' '
-								. 'AND C.COLUMN_COMMENT LIKE CONCAT(\'@refs \', C2.TABLE_NAME, \'\\.\', C2.COLUMN_NAME) '
+								. 'AND C.COLUMN_COMMENT LIKE CONCAT(\'@refs \', C2.TABLE_NAME, \'\\.\', C2.COLUMN_NAME, \'%\') '
 							. ') '
 							. 'OR ( '
 								. 'C.COLUMN_NAME LIKE CONCAT(T.TABLE_NAME, \'\\_%\') '
