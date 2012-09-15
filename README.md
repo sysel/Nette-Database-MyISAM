@@ -3,10 +3,10 @@ Nette Database MySQL MyISAM driver
 
 Nette Database doesn't support MySQL MyISAM tables, with this driver is possible to use it.
 
-# Requirements
+## Requirements
 
-- Nette for PHP 5.3
-- tables referenced columns names has to be in format 'table'_'column_name', like author_id or has to have @refs table.column_name in column comment. Schema can look like:
+* Nette for PHP 5.3
+* tables referenced columns names has to be in format 'table'_'column_name', like author_id or has to have @refs table.column_name in column comment. Schema can look like:
 
     |  Category                        |
     | Column name  | Column comment    |
@@ -22,13 +22,14 @@ Nette Database doesn't support MySQL MyISAM tables, with this driver is possible
     | category     | @refs category.id Some comment :)|
     | text         | Text content                     |
 
-# Instalation
+## Instalation
 
 Copy driver to libs/NetteExtras dir or somewhere else where robot loader can find it.
 
-# Using
+## Using
 
 Create database connection:
+
     $connection = new \Nette\Database\Connection(
                             'mysql:host='.$servername.';dbname='.$database,
                             $user, $password, NULL,
@@ -36,6 +37,7 @@ Create database connection:
                         );
 
 Or you can add it to you config.neon:
+
     services:
         database:
             class: Nette\Database\Connection(
