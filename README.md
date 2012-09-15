@@ -8,19 +8,19 @@ Nette Database doesn't support MySQL MyISAM tables, with this driver is possible
 * Nette for PHP 5.3
 * tables referenced columns names has to be in format 'table'_'column_name', like author_id or has to have @refs table.column_name in column comment. Schema can look like:
 
-     |  Category                        |
-     | Column name  | Column comment    |
-     +----------------------------------+
-     | id           | Category id       |
-     | name         | Category name     |
-     
-     |  Text                                           |
-     | Column name  | Column comment                   |
-     +-------------------------------------------------+
-     | id           | Text id                          |
-     | category_id  | Some comment                     |
-     | category     | @refs category.id Some comment :)|
-     | text         | Text content                     |
+    Category
+    | Column name  | Column comment    |
+    +----------------------------------+
+    | id           | Category id       |
+    | name         | Category name     |
+
+    Text
+    | Column name  | Column comment                   |
+    +-------------------------------------------------+
+    | id           | Text id                          |
+    | category_id  | Some comment                     |
+    | category     | @refs category.id Some comment :)|
+    | text         | Text content                     |
 
 ## Instalation
 
