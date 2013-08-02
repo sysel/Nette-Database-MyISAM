@@ -68,6 +68,16 @@ class MySqlMyIsamDriver extends Nette\Object implements Nette\Database\ISuppleme
 
 
 	/**
+	 * Formats boolean for use in a SQL statement.
+	 */
+	public function formatBool($value)
+	{
+		return $value ? '1' : '0';
+	}
+
+
+
+	/**
 	 * Formats date-time for use in a SQL statement.
 	 */
 	public function formatDateTime(\DateTime $value)
@@ -127,7 +137,7 @@ class MySqlMyIsamDriver extends Nette\Object implements Nette\Database\ISuppleme
 			WHERE TABLE_SCHEMA = DATABASE()
 		");*/
 		$tables = array();
-		foreach ($this->connection->query('SHOW FULL TABLES', \PDO::FETCH_NUM) as $row) {
+		foreach ($this->connection->query('SHOW FULL TABLES') as $row) {
 			$tables[] = array(
 				'name' => $row[0],
 				'view' => isset($row[1]) && $row[1] === 'VIEW',
@@ -235,7 +245,7 @@ class MySqlMyIsamDriver extends Nette\Object implements Nette\Database\ISuppleme
 	 */
 	public function isSupported($item)
 	{
-		return $item === self::META;
+		return $item === self::SUPPORT_COLUMNS_META || $item == self::SUPPORT_SELECT_UNGROUPED_COLUMNS;
 	}
 
 }
