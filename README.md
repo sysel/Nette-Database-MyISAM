@@ -22,11 +22,11 @@ Nette Database doesn't support MySQL MyISAM tables, with this driver is possible
         | category     | @refs category.id Some comment :)|
         | text         | Text content                     |
 
-## Instalation
+## Installation
 
 Copy driver to libs/NetteExtras dir or somewhere else where robot loader can find it.
 
-## Using
+## Use
 
 Create database connection:
 
