@@ -1,7 +1,7 @@
 Nette Database MySQL MyISAM driver
 ==================================
 
-Nette Database doesn't support MySQL MyISAM tables by default because thi database storage doesn't store informations about foreign keys. Unfortunately, there are still servers which does support only MyISAM storage tables because they consume more system resources. This driver enables you to used Nette database on those servers.
+Nette Database doesn't support MySQL MyISAM tables by default because this database storage doesn't store information about foreign keys. Unfortunately, there are still servers which support only MyISAM storage tables because they don't consume too many system resources. This driver enables you to use Nette database on those servers.
 
 ## Requirements
 
