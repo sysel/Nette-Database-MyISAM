@@ -1,12 +1,12 @@
 Nette Database MySQL MyISAM driver
 ==================================
 
-Nette Database doesn't support MySQL MyISAM tables, with this driver is possible to use it.
+Nette Database doesn't support MySQL MyISAM tables by default because thi database storage doesn't store informations about foreign keys. Unfortunately, there are still servers which does support only MyISAM storage tables because they consume more system resources. This driver enables you to used Nette database on those servers.
 
 ## Requirements
 
-* [Nette](http://nette.org/ "Nette Framework") for PHP 5.3
-* tables referenced columns names has to be in format 'table'_'column_name', like author_id or has to have @refs table.column_name in column comment. Schema can look like:
+* [Nette](http://nette.org/ "Nette Framework") for PHP 5.3 (tested on version 2.2.2)
+* table's referenced columns names shall be in format 'table'_'column_name', like author_id or shall have @refs table.column_name in column's comment. The schema can look like:
 
         |  Category                        |
         | Column name  | Column comment    |
