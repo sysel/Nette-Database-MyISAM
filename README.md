@@ -38,14 +38,14 @@ Create database connection:
 
 Or you can add it to you config.neon:
 
-    services:
+    nette:
         database:
-            class: Nette\Database\Connection(
-                        '%database.driver%:host=%database.host%;dbname=%database.dbname%',
-                        %database.user%, %database.password%, NULL,
-                        NetteExtras\Database\MySqlMyIsamDriver
-                    )
-            setup:
-                - setCacheStorage(@cacheStorage)
+            default:
+                dsn: '%database.driver%:host=%database.host%;dbname=%database.database%'
+                user: %database.user%
+                password: %database.password%
+                reflection: discovered
+                options:
+                    driverClass: \NetteExtras\Database\MySqlMyIsamDriver
 
 
