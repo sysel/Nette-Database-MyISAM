@@ -48,4 +48,6 @@ Or you can add it to you config.neon:
                 options:
                     driverClass: \NetteExtras\Database\MySqlMyIsamDriver
 
+## Known limitations
 
+Getting relations from information schema is not very effective therefore using cache storage is recommended. Despite of that first run can take several seconds.
