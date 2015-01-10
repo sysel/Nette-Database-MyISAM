@@ -1,0 +1,21 @@
+{
+    "name": "sysel/Nette-Database-MyISAM",
+    "type": "library",
+    "description": "Nette-Database-MyISAM - MyISAM driver for Nette Database",
+    "keywords": ["task", "nette"],
+    "homepage": "https://github.com/sysel/Nette-Database-MyISAM",
+    "license": ["BSD-3", "GPL-2.0", "GPL-3.0"],
+    "authors": [{
+        "name": "Vojtech Sysel"
+    }],
+    "support": {
+        "issues": "https://github.com/sysel/Nette-Database-MyISAM/issues"
+    },
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "nette/nette" : ">=2.2.0",
+        "nette/tester": "~1.3"
+    }
+}
