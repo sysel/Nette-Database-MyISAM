@@ -33,8 +33,9 @@ class MyIsamDriverTest extends Tester\TestCase
 		// arrange
 		$connection = new Nette\Database\Connection($this->options['dsn'], $this->options['user'], $this->options['password'], $this->options);
 		$cacheMemoryStorage = new Nette\Caching\Storages\MemoryStorage;
-		$reflection = new Nette\Database\Reflection\DiscoveredReflection($connection, $cacheMemoryStorage);
-		$context = new Nette\Database\Context($connection, $reflection, $cacheMemoryStorage);
+		$structure = new Nette\Database\Structure($connection, $cacheMemoryStorage);
+		$conventions = new Nette\Database\Conventions\DiscoveredConventions($structure);
+		$context = new Nette\Database\Context($connection, $structure, $conventions, $cacheMemoryStorage);
 
 		Nette\Database\Helpers::loadFromFile($connection, __DIR__ . "/files/mysql-nette_test1.sql");
 

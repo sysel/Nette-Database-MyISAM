@@ -44,7 +44,7 @@ Or you can add it to you config.neon:
                 dsn: '%database.driver%:host=%database.host%;dbname=%database.database%'
                 user: %database.user%
                 password: %database.password%
-                reflection: discovered
+                conventions: discovered
                 options:
                     driverClass: \NetteExtras\Database\MySqlMyIsamDriver
 
