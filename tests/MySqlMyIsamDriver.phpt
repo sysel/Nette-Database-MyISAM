@@ -15,7 +15,7 @@ use Nette,
 require_once __DIR__ . '/bootstrap.php';
 
 /**
- * @testcase
+ * @testCase
  */
 class MyIsamDriverTest extends Tester\TestCase
 {
@@ -29,6 +29,9 @@ class MyIsamDriverTest extends Tester\TestCase
 		$this->options = $options;
 	}
 
+	/**
+	 * Test driver functionality
+	 */
 	public function testRelatedColumns() {
 		// arrange
 		$connection = new Nette\Database\Connection($this->options['dsn'], $this->options['user'], $this->options['password'], $this->options);
@@ -86,6 +89,32 @@ class MyIsamDriverTest extends Tester\TestCase
 			),
 		);
 		Assert::same($expected, $result);
+	}
+
+	/**
+	 * Test driver intergration
+	 */
+	public function testExtensionIntegration() {
+		// arrange
+		$compiler = new Nette\DI\Compiler;
+		$extension = new Nette\Bridges\DatabaseDI\DatabaseExtension;
+		$extension->setCompiler($compiler, 'test');
+		$extension->setConfig(array(
+			'dsn' => $this->options['dsn'],
+			'user' => $this->options['user'],
+			'password' => $this->options['password'],
+			'conventions' => 'discovered',
+			'options' => array(
+				'driverClass' => '\\NetteExtras\\Database\\MySqlMyIsamDriver',
+			),
+		));
+		$extension->loadConfiguration();
+
+		// act
+		$definition = $extension->getContainerBuilder()->getDefinition('test.default');
+
+		// assert
+		Assert::truthy($definition);
 	}
 }
 

@@ -10,9 +10,7 @@ $options = array(
 	'driverClass' => 'NetteExtras\\Database\\MySqlMyIsamDriver',
 );
 
-// require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../vendor/Nette-minified/nette.phar';
-require_once __DIR__ . '/../vendor/nette/tester/Tester/bootstrap.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Task files
 require_once __DIR__ . '/../MySqlMyIsamDriver.php';

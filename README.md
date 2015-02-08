@@ -13,7 +13,7 @@ Nette Database doesn't support MySQL MyISAM tables by default because this datab
         +----------------------------------+
         | id           | Category id       |
         | name         | Category name     |
-    
+
         |  Text                                           |
         | Column name  | Column comment                   |
         +-------------------------------------------------+
@@ -56,7 +56,7 @@ Please use [Composer](https://getcomposer.org/ "Composer - Dependency Manager fo
 
 Than run Nette Tester with your 'php.ini' file configuration. The configuration is required for correct PDO class use.
 
-    vendor/bin/tester -c /path/to/your/php.ini tests
+    vendor/bin/tester -c tests/php-unix.ini tests
 
 
 ## Known limitations
