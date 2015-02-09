@@ -1,10 +1,4 @@
 <?php
-/**
- * TEST: MySQL MyISAM Driver test
- *
- * @author Vojtech Sysel
- */
-
 namespace NetteExtras\Database\Test;
 
 use Nette,
@@ -15,6 +9,8 @@ use Nette,
 require_once __DIR__ . '/bootstrap.php';
 
 /**
+ * TEST: MySQL MyISAM Driver test
+ * @author Vojtech Sysel
  * @testCase
  */
 class MyIsamDriverTest extends Tester\TestCase
@@ -115,6 +111,29 @@ class MyIsamDriverTest extends Tester\TestCase
 
 		// assert
 		Assert::truthy($definition);
+	}
+
+	/**
+	 * Invalid configuration
+	 */
+	public function testInvalidConfiguration() {
+		// arrange
+		$compiler = new Nette\DI\Compiler;
+		$extension = new Nette\Bridges\DatabaseDI\DatabaseExtension;
+		$extension->setCompiler($compiler, 'test');
+		$extension->setConfig(array(
+			'dsn' => $this->options['dsn'],
+			'user' => $this->options['user'],
+			'password' => $this->options['password'],
+			'conventions' => 'discovered',
+			'driverClass' => '\\NetteExtras\\Database\\MySqlMyIsamDriver',
+		));
+
+		// act & assert
+		Assert::exception(function() use($extension) {
+			$extension->loadConfiguration();
+			$definition = $extension->getContainerBuilder()->getDefinition('test.default');
+		}, 'Nette\\InvalidStateException');
 	}
 }
 

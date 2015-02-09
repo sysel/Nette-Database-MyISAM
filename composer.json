@@ -14,8 +14,9 @@
     "require": {
         "php": ">=5.3"
     },
+    "minimum-stability": "beta",
     "require-dev": {
-        "nette/nette" : ">=2.2.0",
+        "nette/nette": "2.3.0-beta2",
         "nette/tester": "~1.3"
     }
 }
