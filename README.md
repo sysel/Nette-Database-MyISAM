@@ -5,22 +5,24 @@ Nette Database doesn't support MySQL MyISAM tables by default because this datab
 
 ## Requirements
 
-* [Nette](http://nette.org/ "Nette Framework") for PHP 5.3 (tested on version 2.2.2)
+* [Nette](http://nette.org/ "Nette Framework") for PHP 5.3 (tested on version 2.2.7)
 * table's referenced columns names shall be in format 'table'_'column_name', like author_id or shall have @refs table.column_name in column's comment. The schema can look like:
 
-        |  Category                        |
-        | Column name  | Column comment    |
-        +----------------------------------+
-        | id           | Category id       |
-        | name         | Category name     |
-    
-        |  Text                                           |
-        | Column name  | Column comment                   |
-        +-------------------------------------------------+
-        | id           | Text id                          |
-        | category_id  | Some comment                     |
-        | category     | @refs category.id Some comment :)|
-        | text         | Text content                     |
+```
+    |  Category                        |
+    | Column name  | Column comment    |
+    +----------------------------------+
+    | id           | Category id       |
+    | name         | Category name     |
+
+    |  Text                                           |
+    | Column name  | Column comment                   |
+    +-------------------------------------------------+
+    | id           | Text id                          |
+    | category_id  | Some comment                     |
+    | category     | @refs category.id Some comment :)|
+    | text         | Text content                     |
+```
 
 ## Installation
 
@@ -40,15 +42,17 @@ $connection = new \Nette\Database\Connection(
 
 Or you can add it to you config.neon:
 
-    nette:
-        database:
-            default:
-                dsn: '%database.driver%:host=%database.host%;dbname=%database.database%'
-                user: %database.user%
-                password: %database.password%
-                reflection: discovered
-                options:
-                    driverClass: \NetteExtras\Database\MySqlMyIsamDriver
+```
+nette:
+    database:
+        default:
+            dsn: '%database.driver%:host=%database.host%;dbname=%database.database%'
+            user: %database.user%
+            password: %database.password%
+            reflection: discovered
+            options:
+                driverClass: \NetteExtras\Database\MySqlMyIsamDriver
+```
 
 ## Known limitations
 
