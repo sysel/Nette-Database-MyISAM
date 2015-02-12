@@ -30,11 +30,13 @@ Copy driver to libs/NetteExtras dir or somewhere else where robot loader can fin
 
 Create database connection:
 
-    $connection = new \Nette\Database\Connection(
-                            'mysql:host='.$servername.';dbname='.$database,
-                            $user, $password, NULL,
-                            'NetteExtras\Database\MySqlMyIsamDriver'
-                        );
+```php
+$connection = new \Nette\Database\Connection(
+                        'mysql:host='.$servername.';dbname='.$database,
+                        $user, $password, NULL,
+                        'NetteExtras\Database\MySqlMyIsamDriver'
+                    );
+```
 
 Or you can add it to you config.neon:
 
