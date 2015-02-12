@@ -5,7 +5,7 @@ Nette Database doesn't support MySQL MyISAM tables by default because this datab
 
 ## Requirements
 
-* [Nette](http://nette.org/ "Nette Framework") for PHP 5.3 (tested on version 2.2.7)
+* [Nette](http://nette.org/ "Nette Framework") for PHP 5.3+ (tested on version 2.3.0 beta2)
 * table's referenced columns names shall be in format 'table'_'column_name', like author_id or shall have @refs table.column_name in column's comment. The schema can look like:
 
 ```
