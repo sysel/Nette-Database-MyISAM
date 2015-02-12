@@ -1,5 +1,5 @@
 {
-    "name": "sysel/Nette-Database-MyISAM",
+    "name": "sysel/nette-database-myisam",
     "type": "library",
     "description": "Nette-Database-MyISAM - MyISAM driver for Nette Database",
     "keywords": ["task", "nette"],
