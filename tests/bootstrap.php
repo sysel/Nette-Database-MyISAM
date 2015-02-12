@@ -4,7 +4,7 @@
  */
 
 $options = array(
-	'dsn' => 'mysql:host=127.0.0.1;dbname=test',
+	'dsn' => 'mysql:host=127.0.0.1',
 	'user' => 'root',
 	'password' => '',
 	'driverClass' => 'NetteExtras\\Database\\MySqlMyIsamDriver',
