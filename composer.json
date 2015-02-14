@@ -2,7 +2,7 @@
     "name": "sysel/nette-database-myisam",
     "type": "library",
     "description": "Nette-Database-MyISAM - MyISAM driver for Nette Database",
-    "keywords": ["task", "nette"],
+    "keywords": ["database", "driver", "nette", "myisam"],
     "homepage": "https://github.com/sysel/Nette-Database-MyISAM",
     "license": ["BSD-3", "GPL-2.0", "GPL-3.0"],
     "authors": [{
@@ -16,7 +16,7 @@
     },
     "minimum-stability": "beta",
     "require-dev": {
-        "nette/nette": "2.3.0-beta2",
+        "nette/nette": "2.3.0-beta3",
         "nette/tester": "~1.3"
     }
 }
