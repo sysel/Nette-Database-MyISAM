@@ -16,7 +16,7 @@
     },
     "minimum-stability": "beta",
     "require-dev": {
-        "nette/nette": "2.3.0-beta3",
+        "nette/nette": "~2.3",
         "nette/tester": "~1.3"
     }
 }

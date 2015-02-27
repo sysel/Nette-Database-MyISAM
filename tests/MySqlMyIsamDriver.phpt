@@ -107,7 +107,7 @@ class MyIsamDriverTest extends Tester\TestCase
 		$extension->loadConfiguration();
 
 		// act
-		$definition = $extension->getContainerBuilder()->getDefinition('test.default');
+		$definition = $extension->getContainerBuilder()->getDefinition('test.default.connection');
 
 		// assert
 		Assert::truthy($definition);
