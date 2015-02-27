@@ -26,7 +26,11 @@ Nette Database doesn't support MySQL MyISAM tables by default because this datab
 
 ## Installation
 
-Copy driver to libs/NetteExtras dir or somewhere else where robot loader can find it.
+Download and copy driver to libs/NetteExtras dir or somewhere else where robot loader can find it. Or use composer
+
+```bash
+composer require sysel/nette-database-myisam:1.1.*
+```
 
 ## Use
 
