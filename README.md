@@ -1,32 +1,31 @@
-Nette Database MySQL MyISAM driver
-==================================
+# Nette Database MySQL MyISAM driver
 
 Nette Database doesn't support MySQL MyISAM tables by default because this database storage doesn't store information about foreign keys. Unfortunately, there are still servers which support only MyISAM storage tables because they don't consume too many system resources. This driver enables you to use Nette database on those servers.
 
 ## Requirements
 
 * [Nette](http://nette.org/ "Nette Framework") for PHP 5.3+ (tested on version 2.3.0)
-* table's referenced columns names shall be in format 'table'_'column_name', like author_id or shall have @refs table.column_name in column's comment. The schema can look like:
+* table's referenced columns names shall be in format `table_columnName`, like `author_id` or shall have `@refs table.columnName` in column's comment. The schema can look like:
 
 ```
-    |  Category                        |
-    | Column name  | Column comment    |
-    +----------------------------------+
-    | id           | Category id       |
-    | name         | Category name     |
+|          Category                |
+| Column name  | Column comment    |
++----------------------------------+
+| id           | Category id       |
+| name         | Category name     |
 
-    |  Text                                           |
-    | Column name  | Column comment                   |
-    +-------------------------------------------------+
-    | id           | Text id                          |
-    | category_id  | Some comment                     |
-    | category     | @refs category.id Some comment :)|
-    | text         | Text content                     |
+|            Text                                 |
+| Column name  | Column comment                   |
++-------------------------------------------------+
+| id           | Text id                          |
+| category_id  | Some comment                     |
+| category     | @refs category.id Some comment :)|
+| text         | Text content                     |
 ```
 
 ## Installation
 
-Download and copy driver to libs/NetteExtras dir or somewhere else where robot loader can find it. Or use composer
+Download and copy driver to `libs/NetteExtras` dir or somewhere else where robot loader can find it. Or use composer
 
 ```bash
 composer require sysel/nette-database-myisam:dev-master
@@ -46,7 +45,7 @@ $connection = new \Nette\Database\Connection(
 
 Or you can add it to you config.neon:
 
-```
+```neon
 nette:
     database:
         default:
@@ -66,7 +65,7 @@ Please use [Composer](https://getcomposer.org/ "Composer - Dependency Manager fo
 composer update
 ```
 
-Than run Nette Tester with your 'php.ini' file configuration. The configuration is required for correct PDO class use.
+Than run Nette Tester with your `php.ini` file configuration. The configuration is required for correct PDO class use.
 
 ```bash
 vendor/bin/tester -c tests/php-unix.ini tests
