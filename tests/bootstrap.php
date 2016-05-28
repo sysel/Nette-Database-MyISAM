@@ -7,7 +7,7 @@ $options = array(
 	'dsn' => 'mysql:host=127.0.0.1',
 	'user' => 'root',
 	'password' => '',
-	'driverClass' => 'NetteExtras\\Database\\MySqlMyIsamDriver',
+	'driverClass' => '\\Sysel\\Nette\\Database\\Drivers\\MySqlMyIsamDriver',
 );
 
 require_once __DIR__ . '/../vendor/autoload.php';

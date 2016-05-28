@@ -101,7 +101,7 @@ class MyIsamDriverTest extends Tester\TestCase
 			'password' => $this->options['password'],
 			'conventions' => 'discovered',
 			'options' => array(
-				'driverClass' => '\\NetteExtras\\Database\\MySqlMyIsamDriver',
+				'driverClass' => '\\Sysel\\Nette\\Database\\Drivers\\MySqlMyIsamDriver',
 			),
 		));
 		$extension->loadConfiguration();
@@ -126,7 +126,7 @@ class MyIsamDriverTest extends Tester\TestCase
 			'user' => $this->options['user'],
 			'password' => $this->options['password'],
 			'conventions' => 'discovered',
-			'driverClass' => '\\NetteExtras\\Database\\MySqlMyIsamDriver',
+			'driverClass' => '\\Sysel\\Nette\\Database\\Drivers\\MySqlMyIsamDriver',
 		));
 
 		// act & assert

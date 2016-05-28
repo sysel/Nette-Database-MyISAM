@@ -4,7 +4,7 @@ Nette Database doesn't support MySQL MyISAM tables by default because this datab
 
 ## Requirements
 
-* [Nette](http://nette.org/ "Nette Framework") for PHP 5.3+ (tested on version 2.3.0)
+* [Nette](http://nette.org/ "Nette Framework") for PHP 5.6+ (tested on version 2.4.0-RC2)
 * table's referenced columns names shall be in format `table_columnName`, like `author_id` or shall have `@refs table.columnName` in column's comment. The schema can look like:
 
 ```
@@ -25,7 +25,7 @@ Nette Database doesn't support MySQL MyISAM tables by default because this datab
 
 ## Installation
 
-Download and copy driver to `libs/NetteExtras` dir or somewhere else where robot loader can find it. Or use composer
+Download and copy driver to `libs/Sysel/Nette-Database-MyISAM` dir or somewhere else where robot loader can find it. Or use composer
 
 ```bash
 composer require sysel/nette-database-myisam:dev-master
@@ -39,7 +39,7 @@ Create database connection:
 $connection = new \Nette\Database\Connection(
                         'mysql:host='.$servername.';dbname='.$database,
                         $user, $password, NULL,
-                        'NetteExtras\Database\MySqlMyIsamDriver'
+                        '\\Sysel\\Nette\\Database\\Drivers\\MySqlMyIsamDriver'
                     );
 ```
 
@@ -54,7 +54,7 @@ nette:
             password: %database.password%
             conventions: discovered
             options:
-                driverClass: \NetteExtras\Database\MySqlMyIsamDriver
+                driverClass: Sysel\Nette\Database\Drivers\MySqlMyIsamDriver
 ```
 
 ## Running tests
