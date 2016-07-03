@@ -1,5 +1,7 @@
 # Nette Database MySQL MyISAM driver
 
+[![Build Status](https://api.travis-ci.org/sysel/Nette-Database-MyISAM.svg?branch=master)](https://travis-ci.org/sysel/Nette-Database-MyISAM)
+
 Nette Database doesn't support MySQL MyISAM tables by default because this database storage doesn't store information about foreign keys. Unfortunately, there are still servers which support only MyISAM storage tables because they don't consume too many system resources. This driver enables you to use Nette database on those servers.
 
 ## Requirements
